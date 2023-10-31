@@ -43,8 +43,41 @@ class LinkedList:
     count = 0 
     while itr:
       count+=1
-      itr += itr.next
+      itr = itr.next
     return count
+  
+  def remove_at(self, index):
+    if index < 0 or index >= self.get_len():
+      raise Exception("Index not valid!")
+    
+    if index == 1:
+      self.head = self.next
+
+    count = 0
+    itr = self.head
+    while itr:
+      if count == index -1:
+        itr.next = itr.next.next
+        break
+      itr = itr.next
+      count += 1
+
+  def insert_at(self,index,  data):
+    if index == 0:
+      self.insert_at_begining(data)
+
+    count = 0 
+    itr = self.head
+    while itr:
+      if count == index -1:
+        node = Node(data, itr.next)
+        itr.next = node
+        break
+      
+      itr = itr.next
+      count=+1
+
+      
       
   
 if __name__ == '__main__':
@@ -52,5 +85,7 @@ if __name__ == '__main__':
 #   ll.insert_at_begining(5)
 #   ll.insert_at_end(86)
 #   ll.insert_at_begining(76)
-  ll.insert_values(["Hello", "I am lokesh! ", "This is linked List"])
+  ll.insert_values([4, 7, 9, 6, 5, 3, 8])
+  # ll.insert_at(2, 56)
+#   ll.remove_at(2)
   ll.print()
