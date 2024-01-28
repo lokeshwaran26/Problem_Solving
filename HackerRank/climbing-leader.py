@@ -1,15 +1,22 @@
+
 def climbingLeaderboard(ranked, player):
     # Write your code here
-    res = []
-    for i in ranked:
-        if i not in res:
-            res.append(i)
+    rnk = list(set(ranked))
+    rnk.sort()
+    n = len(rnk)
     final = []
-    left = res[i]
-    right = res[i+1]
-    for i in range(0, (len(res)-1)):
-        for j in player:
-            if left >= player <= right:
-                final.append(i+1)
-                break
-            if 
+    i = 0
+    for scr in player:
+        while i < n and rnk[i] <= scr:
+            i += 1
+        final.append(n-i + 1)
+    return final
+
+
+
+        
+        
+r = [ 100, 100, 50, 40, 40, 20, 10]
+p = [ 5, 25, 50, 120]
+result = climbingLeaderboard(r,p)
+print(result)
