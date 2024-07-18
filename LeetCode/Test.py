@@ -14,6 +14,8 @@
 
 # print(largestRectangleArea([2, 1,5,6,2,3]))
 
-n = [5,8,3,7,9,1]
-m = len(n)
-print(n[1:] + n[:1])
+# n = [5,8,3,7,9,1]
+# m = len(n)
+# print(n[1:] + n[:1])
+li = "0000000000000000000000000000000000000"
+print(len(li))

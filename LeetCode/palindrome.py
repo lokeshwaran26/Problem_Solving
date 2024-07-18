@@ -1,14 +1,31 @@
-# Sum of N numbers
+def max_hourglass_sum(arr):
+    # Initialize the maximum hourglass sum to a very small number
+    max_sum = -float('inf')
+    
+    # Loop through each possible hourglass starting position
+    for i in range(4):
+        for j in range(4):
+            # Calculate the hourglass sum for the current position
+            current_sum = (
+                arr[i][j] + arr[i][j+1] + arr[i][j+2] + 
+                arr[i+1][j+1] + 
+                arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
+            )
+            # Update the maximum hourglass sum if the current one is greater
+            if current_sum > max_sum:
+                max_sum = current_sum
+    
+    return max_sum
 
-# List ---> [1,2,3,4,5,6,7,8,9,18]
-li = [10, 20, 8 ]
-n = len(li)
-# print(li[3])
-# print(n)
-sum = 0
-for i in range(n):
-    sum = sum + li[i]
+# Example 6x6 array
+A = [
+    [1, 1, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0],
+    [0, 0, 2, 4, 4, 0],
+    [0, 0, 0, 2, 0, 0],
+    [0, 0, 1, 2, 4, 0]
+]
 
-print(sum)
-
-
+# Calculate and print the maximum hourglass sum
+print(max_hourglass_sum(A))
