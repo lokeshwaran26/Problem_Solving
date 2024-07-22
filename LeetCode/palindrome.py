@@ -17,15 +17,7 @@ def max_hourglass_sum(arr):
     
     return max_sum
 
-# Example 6x6 array
-A = [
-    [1, 1, 1, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0],
-    [1, 1, 1, 0, 0, 0],
-    [0, 0, 2, 4, 4, 0],
-    [0, 0, 0, 2, 0, 0],
-    [0, 0, 1, 2, 4, 0]
-]
+
 
 # Calculate and print the maximum hourglass sum
 print(max_hourglass_sum(A))
