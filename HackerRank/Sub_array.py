@@ -80,20 +80,38 @@
 # 80
 
 
-def max_product_subarray(nums):
+
     # Your code here
-    l = 0
-    r = 1
-    li = []
-    while r < len(nums):
-        li.append(nums[l]*nums[r])
-        l+=1
-        r+=1
-    print(max(li))
-    print(li)
-
-
-nums = [-2, -3, 0, -2, -40]
 # nums = [-2, 0, -1]
-max_product_subarray(nums)
-# This problem requires handling negative numbers and zeroes, making it slightly more complex than just finding the sum of subarrays.
+# nums = [-2, -3, 0, -2, -40]
+# # nums = [-2, -3, 0, -2, -40]
+#         #   l   r
+# # i - 0 -- >
+# l = 0
+# r = 1
+# #li = []
+# li = []
+# for i in range(len(nums)-1):
+#     li.append(nums[l]*nums[r])
+#     l+=1
+#     r+=1
+# print(max(li))
+# print(li)
+
+
+
+
+nums = [ 5,5,1,1,2,2,4]
+nums.sort()
+n = len(nums)
+if n == 1:
+    print(nums[0])
+
+temp = 1
+while temp < n:
+    if  nums[temp-1] != nums[temp]:
+       print( nums[temp-1])
+    temp += 2    
+#  print(nums[temp-1])
+
+
