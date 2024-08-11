@@ -5,6 +5,6 @@ def find(word):
             if i[j] == i[j+1]:
                 return i[j]
 
-string = 'Iam hello jolly'
+string = 'Iam hello Hera'
 
 print(find(string))
